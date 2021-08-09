@@ -1,0 +1,6 @@
+Credentials cache: API:0F35E68B-C02C-44E0-98F8-8FB697EAFB81
+        Principal: yamjad@1337.MA
+
+  Issued                Expires               Principal
+Aug  2 14:18:51 2021  Aug  3 00:18:51 2021  krbtgt/1337.MA@1337.MA
+Aug  2 14:18:53 2021  Aug  3 00:18:51 2021  HTTP/iscsi.1337.ma@1337.MA
