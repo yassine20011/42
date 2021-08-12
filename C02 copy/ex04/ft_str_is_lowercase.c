@@ -1,25 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamjad <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/08 18:40:30 by yamjad            #+#    #+#             */
-/*   Updated: 2021/08/12 14:36:12 by yamjad           ###   ########.fr       */
+/*   Created: 2021/08/10 10:32:54 by yamjad            #+#    #+#             */
+/*   Updated: 2021/08/10 10:57:33 by yamjad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strlen(char *str)
 {
-	int	a;
+	int	i;
 
-	a = 0;
-	while (src[a] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		dest[a] = src[a];
-		a++;
+		i++;
 	}
-	dest[a] = '\0';
-	return (dest);
+	return (i);
+}
+
+int	ft_str_is_lowercase(char *str)
+{
+	int	i;
+	int	n;
+
+	n = ft_strlen(str);
+	if (n == 0)
+	{
+		return (1);
+	}
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] >= 97 && str[i] <= 122 ))
+		{
+			i++;
+		}
+		else
+		{
+			return (0);
+		}
+	}
+	return (1);
 }

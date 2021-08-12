@@ -1,48 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamjad <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 12:24:18 by yamjad            #+#    #+#             */
-/*   Updated: 2021/08/12 14:51:23 by yamjad           ###   ########.fr       */
+/*   Created: 2021/08/11 12:11:58 by yamjad            #+#    #+#             */
+/*   Updated: 2021/08/11 12:33:14 by yamjad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char	*str)
+void	strupcase(char	*str, int	i)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (str[i] >= 'a' && str[i] <= 'z')
 	{
+		str[i] -= 32;
 		i++;
 	}
-	return (i);
 }
 
-int	ft_str_is_alpha(char *str)
+char	*ft_strcapitalize(char *str)
 {
 	int	i;
-	int	n;
 
-	n = ft_strlen(str);
-	if (n == 0)
-	{
-		return (1);
-	}
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= 97 && str[i] <= 122 ) || (str[i] >= 65 && str[i] <= 90))
+		if (i == 0 || str[i - 1] == ' ')
 		{
-			i++;
+			strupcase(str, i);
+		}
+		else if (((str[i - 1] < '0' || str[i - 1] > '9'))
+			&& ((str[i - 1] < 'A' || str[i - 1] > 'Z'))
+			&& ((str[i - 1] < 'a' || str[i - 1] > 'z')))
+		{
+			strupcase(str, i);
 		}
 		else
 		{
-			return (0);
+			if (str[i] >= 'A' && str[i] <= 'Z')
+			{
+				str[i] += 32;
+			}
 		}
+		i++;
 	}
-	return (1);
+	return (str);
 }

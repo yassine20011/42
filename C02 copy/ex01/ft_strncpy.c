@@ -5,25 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamjad <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/09 09:50:01 by yamjad            #+#    #+#             */
-/*   Updated: 2021/08/09 12:14:02 by yamjad           ###   ########.fr       */
+/*   Created: 2021/08/11 09:10:55 by yamjad            #+#    #+#             */
+/*   Updated: 2021/08/12 17:12:03 by yamjad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	a;
+	unsigned int	a;
 
 	a = 0;
-	while (src[a] != '\0')
+	while (a < n)
 	{
-		while (a < n)
-		{
-			dest[a] = src[a];
-			a++;
-		}
-		src[n] = '\0';
+		dest[a] = src[a];
+		a++;
 	}
-	dest[a] = '\0';
-	return (dest[n]);
+	while (dest[a])
+	{
+		dest[a] = '\0';
+		a++;
+	}
+	return (dest);
 }
