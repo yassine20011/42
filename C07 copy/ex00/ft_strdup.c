@@ -1,27 +1,32 @@
-#include<stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yamjad <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/25 11:10:45 by yamjad            #+#    #+#             */
+/*   Updated: 2021/08/25 11:12:33 by yamjad           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include<stdlib.h>
 
-char *ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
-    int i;
-    char *p;
+	int		i;
+	char	*p;
 
-    i = 0;
-    while (src[i])
-        i++;
-    p = (char*)malloc(i + 1 * sizeof(char));
-    
-    i = 0;
-    while (src[i])
-    {
-        p[i] = src[i];
-        i++;
-    }
-    p[i] = '\0';
-    return p;
-}
-
-int main()
-{
-    printf("%s",ft_strdup("Yassine Amjad"));
+	i = 0;
+	while (src[i])
+		i++;
+	p = (char *) malloc (i + 1 * sizeof (char));
+	i = 0;
+	while (src[i])
+	{
+		p[i] = src[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
 }
